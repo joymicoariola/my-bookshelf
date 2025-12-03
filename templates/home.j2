@@ -1,0 +1,36 @@
+{% extends 'layout.j2' %}
+
+
+{% block header %}
+ <div class="intro-text">
+   <h2>{% block title %}Welcome to my Bookshelf{% endblock %}</h2>
+     <p>Sharing the collection of books I have read or listened to, generated from my Goodreads profile.</p>
+ </div>
+{% endblock %}
+
+
+{% block content %}
+ <section class="book-category">
+   <h3><a href="{{ url_for('books_read') }}">Books Read</a></h3>
+     <p>Snoop through the latest books I have read.</p>
+ </section>
+
+
+ <section class="book-category">
+   <h3><a href="{{ url_for('books_to_read') }}">Books to Read</a></h3>
+     <p>A never ending list of books I would like to read.</p>
+ </section>
+{% endblock %}
+
+
+
+
+
+
+
+
+ <section class="book-category">
+   <h3><a href="{{ url_for('books_to_read') }}">Books to Read</a></h3>
+     <p>A never ending list of books I would like to read.</p>
+ </section>
+{% endblock %}

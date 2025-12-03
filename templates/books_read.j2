@@ -1,0 +1,84 @@
+{% extends 'layout.j2' %}
+
+
+{% block header %}
+ <div class="intro-text">
+   <h2>
+     {% block title %}
+       Books I've Read
+     {% endblock %}
+   </h2>
+   <p>
+     A list of books I have finished. This collection was last updated on <time datetime="{{ date }}">{{ date }}</time>
+   </p>
+ </div>
+{% endblock %}
+
+
+{% block content %}
+ {% if books %}
+   <ul aria-labelledby="books-read-title">
+     {% for title in books %}
+       <li>{{ title }}</li>
+     {% endfor %}
+   </ul>
+
+
+ {% else %}
+   <div class="flash" role="status">
+     <p>
+       No books found. I haven't added any to this shelf yet!
+     </p>
+   </div>
+ {% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+	Books_to_read.j2:
+{% extends 'layout.j2' %}
+
+
+{% block header %}
+ <div class="intro-text">
+   <h2>
+     {% block title %}
+       Books I Want to Read
+     {% endblock %}
+   </h2>
+   <p>
+     A list of books I would like to read. This collection was last updated on <time datetime="{{ date }}">{{ date }}</time>
+   </p>
+ </div>
+{% endblock %}
+
+
+{% block content %}
+ {% if books %}
+   <ul aria-labelledby="books-to-read-title">
+     {% for title in books %}
+       <li>{{ title }}</li>
+     {% endfor %}
+   </ul>
+
+
+ {% else %}
+   <div class="flash" role="status">
+     <p>
+       No books found. I haven't added any to this shelf yet!
+     </p>
+   </div>
+ {% endif %}
+{% endblock %}
+
+
+
+
+
+

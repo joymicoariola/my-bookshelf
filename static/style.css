@@ -1,0 +1,283 @@
+html {
+   font-family: "Garamond", sans-serif;
+   background: #f5f5ff;
+   padding: 1rem;
+}
+
+
+body {
+   max-width: 960px;
+   margin: 0 auto;
+   background: #f5f5ff;
+}
+
+
+header {
+   font-family: sans-serif;
+   color: #01406b;
+   margin: 1rem 0;
+}
+
+
+/* Accessibility: Skip Link */
+.skip-link {
+   position: absolute;
+
+
+   /* 1. Hiding it initially */
+   top: -100px;        /* Moves it way off screen so it's invisible */
+
+
+   /* 2. Spacing from the Left */
+   left: 1rem;         /* Adds space from the left edge of the screen */
+
+
+   /* 3. Appearance */
+   background: #002f4e; /* Matches your Dark Blue theme */
+   color: #ffffff;      /* White text for high contrast */
+   font-weight: bold;
+   border-radius: 4px;  /* Softens the corners */
+   z-index: 1000;       /* Ensures it sits ON TOP of the nav bar */
+   transition: top 0.3s ease; /* Makes it slide in smoothly */
+
+
+   /* 4. MAKING IT SMALLER */
+   padding: 0.5rem 1rem; /* Reduces the box size (Top/Bottom, Left/Right) */
+   font-size: 0.85rem;   /* Makes the text smaller */
+}
+
+
+/* When the user tabs to it, this happens: */
+.skip-link:focus {
+   /* 5. Spacing from the Top */
+   top: 1rem;           /* Drops it down 1rem from the top edge */
+
+
+   /* Optional: Adds a glow so they know it is selected */
+   outline: 3px solid orange;
+}
+
+
+h3 {
+   font-family: 'Times New Roman', Times, serif;
+   color: #01406b;
+   margin: 1rem 0;
+}
+
+
+a {
+   color: #002f4e;
+}
+
+
+p {
+   padding: 0.1rem;
+   margin: 1em 0
+}
+
+
+hr {
+   border: none;
+   border-top: 1px solid lightgray;
+}
+
+
+/* NAVIGATION BAR */
+nav {
+   /* background: #8f4747; */
+   display: flex;
+   align-items: center;
+   padding: 0 0.5rem;
+}
+
+
+nav div {
+   font-size: 1.8rem;        /* Makes the text large (like an h1) */
+   /* font-weight: bold;        /* Makes it bold */
+   font-family: 'Courier New', Courier, monospace; /* Matches your other headers */
+   color: #3D348B;           /* Dark Blue brand color */
+   text-shadow: 1px 1px #7678ED;
+   flex: auto;               /* Pushes the links to the right side */
+   margin: 0;
+   padding: 0.25rem 0.5rem;
+}
+
+
+/* Optional: If you want it to act like a link but look like text */
+nav div:hover {
+   cursor: default;          /* Keeps the mouse arrow instead of the text selector */
+}
+
+
+nav h1 {
+   flex: auto;
+   margin: 0;
+}
+
+
+nav h1 a {
+   text-decoration: none;
+   padding: 0.25rem 0.5rem;
+}
+
+
+nav ul {
+   display: flex;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+
+nav ul li a,
+nav ul li span,
+header .action {
+   display: block;
+   padding: 0.5rem;
+}
+
+
+/* MAIN CONTENT AREA */
+.content {
+   padding: 0 1rem 1rem;
+}
+
+
+/* PAGE HEADER (Where "Welcome to my Bookshelf" lives) */
+.content > header {
+   border-bottom: 1px solid lightgray;
+   display: block;
+}
+
+
+
+
+/* --- Grouping for Header text (.intro-text) --- */
+/* This targets the div inside {% block header %} */
+.intro-text h2 {
+   margin: 1rem 0 0.25rem 0;
+   font-size: 1.2em;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.intro-text p {
+   font-style: italic;
+   color: #555;
+   margin-top: 0; /* Pulls text closer to the title */
+   font-size: 0.8rem;
+}
+
+
+/* --- Grouping for Body sections (.book-category) --- */
+/* This targets the sections inside {% block content %} */
+
+
+/* Spacing for the wrapper container */
+.book-category {
+   margin-bottom: 2rem; /* Adds space between the two sections */
+}
+
+
+/* Styling the Links inside the section */
+.book-category h3 a {
+   font-family: 'Times New Roman', Times, serif;
+   color: #002f4e;
+   text-decoration: none; /* Optional: removes underline until hover */
+}
+
+
+/* Styling the hover on links */
+.book-category h3 a:hover {
+   text-decoration: underline;
+}
+
+
+/* Styling the Paragraphs inside the section */
+.book-category p {
+   font-size: 0.85rem;  /* Your preferred small size */
+   color: #333;
+}
+
+
+/* FLASH MESSAGES & FORMS */
+.flash {
+   margin: 1em 0;
+   padding: 1em;
+   background: #cae6f6;
+   border: 1px solid #377ba8;
+}
+
+
+.post > header {
+   display: flex;
+   align-items: flex-end;
+   font-size: 0.85em;
+}
+
+
+.post > header > div:first-of-type {
+   flex: auto;
+}
+
+
+.post > header h1 {
+   font-size: 1.5em;
+   margin-bottom: 0;
+}
+
+
+.post .about {
+   color: slategray;
+   font-style: italic;
+}
+
+
+.post .body {
+   white-space: pre-line;
+}
+
+
+.content:last-child {
+   margin-bottom: 0;
+}
+
+
+.content form {
+   margin: 1em 0;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.content label {
+   font-weight: bold;
+   margin-bottom: 0.5em;
+}
+
+
+.content input,
+.content textarea {
+   margin-bottom: 1em;
+}
+
+
+.content textarea {
+   min-height: 12em;
+   resize: vertical;
+}
+
+
+input.danger {
+   color: #cc2f2e;
+}
+
+
+input[type=submit] {
+   align-self: start;
+   min-width: 10em;
+}
+
+
+
+

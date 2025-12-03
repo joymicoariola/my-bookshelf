@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+ <title>
+   {% block title %}{% endblock %} - My Bookshelf
+ </title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+ <nav aria-label="Main Navigation">
+   <div>My Bookshelf</div>
+   <ul>
+     <li><a href="{{ url_for('home') }}">Home</a></li>
+     <li><a href="{{ url_for('books_read') }}">Books Read</a></li>
+     <li><a href="{{ url_for('books_to_read') }}">Books to Read</a></li>
+   </ul>
+ </nav>
+
+
+ <main id="main-content" class="content">
+   <header>
+     {% block header %}{% endblock %}
+   </header>
+   {% block content %}{% endblock %}
+ </main>
+
+
+ <footer>
+   <a href="https://google.com" target="_blank">
+     Search on Google
+     <span class="sr-only">(Opens in a new window)</span>
+   </a>
+   <p>&copy; 2025 My Bookshelf</p>
+ </footer>
+</body>
+</html>
+
+
+
+
